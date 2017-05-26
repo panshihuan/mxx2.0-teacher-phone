@@ -1,0 +1,36 @@
+%pseudo{
+    position: absolute;
+    content: '';
+    display: block;
+}
+
+%options{
+    box-shadow:  0 0 0 1px #DCDCDC;
+    background-color: #8CC63F;
+    @include box-sizing(border-box);
+    @include transition(border-width, .20s, linear);
+}
+
+%cover{
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+%scroll-y{
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+%scroll-x{
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling:touch;
+}
+
+%none-select{
+    user-select: none;
+    -webkit-user-select: none;
+}

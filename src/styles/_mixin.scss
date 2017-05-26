@@ -1,0 +1,131 @@
+
+
+
+%translateY{
+    top:50%;
+    transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+}
+
+
+%translateX{
+    left:50%;
+    transform:translateX(-50%);
+    -webkit-transform:translateX(-50%);
+}
+
+
+@mixin tranx($relative:relative){
+    position:$relative;
+    @extend %translateX
+}
+
+@mixin trany($relative:relative){
+    position:$relative;
+    @extend %translateY
+}
+
+
+
+%backgroundimg{
+    background:url('../imgs/icons.png');
+    background-repeat: no-repeat;
+}
+
+@mixin bg($width,$height,$top,$left,$display){
+    content:'';
+    display: $display;
+    width:$width;
+    height:$height;
+    background-position: $top $left;
+    @extend %backgroundimg;
+}
+
+
+@mixin fpointer{
+    margin-top:25px;
+    float:right;
+    position:relative;
+    &:before{
+        content:"";
+        display: block;
+        width:20px;
+        height:5px;
+        background:#7A8500;
+        position:absolute;
+        bottom:3px;
+        right:9px;
+        @include rotate(-45deg);
+    }
+    &:after{
+        content:"";
+        display: block;
+        width:20px;
+        height:5px;
+        background:#7A8500;
+        position:absolute;
+        bottom:15px;
+        right:10px;
+        @include rotate(45deg);
+    }
+}
+
+%pointer{
+    @include fpointer;
+}
+
+
+
+@mixin myhover($color){
+    &:hover {
+        background: $color;
+    }
+}
+
+
+@mixin zhe(){
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .5);
+}
+
+@mixin x(){
+    float:right;
+    margin:6px 10px;
+    padding:0 5px;
+    //border:1px solid #333;
+    font-size: 16px;
+    @include radius(50%);
+}
+
+@mixin content($width,$height){
+    overflow: hidden;
+    //padding: 10px;
+    width: $width;
+    min-height: $height;
+    background: #fff;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 1002;
+    @include radius(6px);
+    @include translate(-50%, 0);
+}
+
+
+@mixin sureBtn(){
+    width:90%;
+    height:35px;
+    line-height:35px;
+    background:#8A9600;
+    margin-top:20px;
+    color:#fff;
+    //@include radius(5px);
+}

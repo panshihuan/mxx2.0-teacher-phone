@@ -1,0 +1,227 @@
+
+@import '../../../styles/config';
+@import "../../../styles/function";
+@import "../../../styles/extend";
+@import "../../../styles/keyframes";
+@import "../../../styles/mixin";
+@import "../../../styles/flex";
+@import "../../../styles/thisStyle";
+@import "../../../styles/base";
+@import '../../../styles/common';
+
+
+.activeChange{
+    color:$green03;
+    p{
+        color:$green03;
+    }
+}
+
+.activeTask{
+    color:$green01;
+}
+
+
+.students{
+    &-search{
+        padding:7px 15px;
+        background: #ccc;
+        position: relative;
+        input{
+            width:100%;
+            height:30px;
+            padding-left:30px;
+            @include radius(6px);
+        }
+        &-icon{
+            position: absolute;
+            left:25px;
+            top:15px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+    }
+
+    &-change{
+        padding:7px 30px;
+        height:55px;
+        width:100%;
+        background: #fff;
+        position: relative;
+        border-bottom: 1px solid $borderBottom02;
+        @extend %flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+        &-section{
+            height:35px;
+            width:100%;
+            border:1px solid $borderBottom02;
+            @include radius(4px);
+            @extend %flexbox;
+            @include justify-content(center);
+            @include align-items(center);
+            section{
+                height:100%;
+                font-size: $fontSize01;
+                @include flex(1);
+                @extend %flexbox;
+                @include justify-content(center);
+                @include align-items(center);
+                &:not(:last-child){
+                    border-right:1px solid $borderBottom02;
+                }
+            }
+        }
+    }
+
+    &-href{
+        padding:20px 15px;
+        background: #fff;
+        border-bottom: 1px solid $borderBottom02;
+        @extend %flexbox;
+        @include justify-content(space-around);
+        @include align-items(center);
+        &-img{
+            overflow: hidden;
+            img{
+                height:45px;
+                width:45px;
+                overflow: hidden;
+                @include radius(23px);
+            }
+            @include flex(2);
+        }
+        &-content{
+            padding-left:15px;
+            @include flex(8);
+            p{
+                margin-bottom: 3px;
+                font-size: $fontSize01;  
+                &:first-child{
+                    font-weight: 700;
+                    font-size: $fontSize03;
+                    margin-bottom: 5px;
+                    span{
+                       font-weight: 400;
+                       font-size: $fontSize02; 
+                    }
+                }
+                &:nth-child(4){
+                    span{
+                        color:$green01;
+                    }
+                }
+                &:nth-child(5){
+                    span{
+                        color:$green01;
+                    }
+                }
+            }
+        }
+
+        &-content2{
+            padding-left:0;
+        }
+
+        &-mark{
+            text-align: right;
+            @include flex(1);
+            mark{
+                font-size: $fontSize03;
+            }
+        }
+        &-label{
+            padding-right:6px;
+            border:1px solid #aaa;
+            padding:4px 12px;
+            text-align: center;
+            @include radius(4px);
+            @include flex(3); 
+           span{
+               
+               color:#aaa;
+            //    border:1px solid #aaa;
+               
+           }
+        }
+    }
+
+    &-footer{
+        position: fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        width:100%;
+        height:50px;
+        background: #fff;
+        @extend %flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+        section{
+            font-size: $fontSize01;
+            @include flex(1);
+            @extend %flexbox;
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            p{
+                margin-bottom: 2px;
+            }
+        }
+    }
+    
+}
+
+
+
+
+.parentAlter{
+        padding:50px 15px;
+    }
+    .parentAlter-header section{
+        margin-bottom:15px;
+        position: relative;
+    }
+    .parentAlter-header section input{
+        width:100%;
+        height:45px;
+    }
+    .parentAlter-footer button{
+        width:100%;
+        margin-top:30px;
+        height:45px;
+        background:#2BAF2B;
+        color:#fff;
+        text-align: center;
+        line-height: 45px;
+        font-size: 14px;
+    }
+    .parentAlter-main section {
+        height:40px;
+        line-height: 40px;
+        text-align: center;
+        border:1px solid #888;
+        position: relative;
+    }
+    .parentAlter-main section:not(:first-child){
+        border-top:none;
+    }
+    .parentAlter-main p {
+        width:100%;
+        text-align: center;
+        position: absolute;
+        top:0;
+    }
+    .parentAlter-main input {
+        width:100%;
+        text-align: center;
+        position: absolute;
+        top:0;
+        left:0;
+        height:40px;
+        z-index: 2;
+        opacity: 0;
+    }
+    .parentAlter-main input:checked + p{
+        color:#2BAF2B;
+    }

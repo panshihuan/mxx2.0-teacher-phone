@@ -1,0 +1,98 @@
+
+
+@import '../../../../../styles/config';
+@import "../../../../../styles/function";
+@import "../../../../../styles/extend";
+@import "../../../../../styles/keyframes";
+@import "../../../../../styles/mixin";
+@import "../../../../../styles/flex";
+@import "../../../../../styles/thisStyle";
+@import "../../../../../styles/base";
+@import '../../../../../styles/common';
+
+.address{
+    &-section{
+        padding-top:15px;
+        margin-bottom:7px;
+        background:#fff;
+        &-content{
+            padding:10px 15px 5px 15px;
+            border-bottom:1px solid #eee;
+            &-name{
+                @extend %flexbox;
+                @include justify-content(space-between);
+                @include align-items(center);
+               &-left{
+                   
+               }
+               &-right{
+
+               }
+            }
+
+            &-address{
+                margin:6px 0;
+            }
+        }
+
+        &-btn{
+            padding:10px 15px;
+            border-bottom:1px solid #ccc;
+            overflow: hidden;
+            &-checkbox{
+                float:left;
+                &-mark{
+                    color:#666;
+                    font-size: 15px;
+                    vertical-align: text-bottom;
+                    padding-right:4px;
+                }
+            }
+            &-func{
+                float:right;
+                overflow: hidden;
+                p{
+                    float:right;
+                    margin-left:14px;
+                    mark{
+                        color:#666;
+                        font-size: 15px;
+                        vertical-align: bottom;
+                    }
+                    span{
+
+                    }
+                    &:last-child{
+                        mark{
+                            vertical-align: text-bottom;
+                            font-size: 17px;
+                            padding-right:2px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    &-add{
+        padding:15px;
+        span{
+            display: block;
+            color:#009241;
+            border:1px solid #009241;
+            height:45px;
+            line-height: 45px;
+            text-align: center;
+            @include radius(4px);
+        }
+        &-link{
+            display: block;
+            height:100%;
+            width:100%;
+        }
+        
+    }
+
+}

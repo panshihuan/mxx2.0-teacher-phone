@@ -1,0 +1,61 @@
+
+// /app/style/
+//  font-size: 22px;
+//   color:#8A8A8A;
+
+//lib
+@import 'config';
+@import "function";
+@import "extend";
+@import "keyframes";
+@import "mixin";
+@import "flex";
+@import "thisStyle";
+@import "base";
+
+
+//icon
+@import 'icon.scss';
+
+
+//common
+@import 'common.scss';
+
+// @import '../app/components/self/self';
+// @import '../app/components/students/students';
+// @import '../app/components/login/login';
+// @import '../app/components/login/copyLogin';
+
+
+
+// component
+// @import "../app/login/login";
+// @import "../app/login/copyLogin";
+// @import "../app/home/home";
+// @import "../app/headerGlobal/headerGlobal";
+// @import "../app/indexContainer/indexContainer";
+// @import "../app/self/self";
+// @import "../app/myclass/classes/classes";
+// @import "../app/myclass/helpers/helpers";
+// @import "../app/myclass/students/students";
+
+// @import "../app/myclass/students-alter/students-alter";
+// @import "../app/myclass/students-detail/students-detail";
+// @import "../app/myclass/task-detail/task-detail";
+// @import "../app/myclass/correct/correct";
+// @import "../app/publicComponet/modal/modal";
+// @import "../app/myclass/students-alter/students-alter-invite/students-alter-invite";
+// @import "../app/yettask/yetTask";
+
+// @import "../app/createtask/createTask";
+// @import "../app/publicclass/publicClass";
+// @import "../app/tribestudy/tribeStudy";
+// @import "../app/mytask/myTask";
+// @import "../app/scheme/scheme";
+
+// @import "../app/createtask/changeTask/changeTask";
+// @import "../app/createtask/changeClass/changeClass";
+// @import "../app/createtask/changeClassStudent/changeClassStudent";
+
+
+

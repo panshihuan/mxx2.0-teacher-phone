@@ -1,0 +1,91 @@
+
+@import '../../../../../styles/config';
+@import "../../../../../styles/function";
+@import "../../../../../styles/extend";
+@import "../../../../../styles/keyframes";
+@import "../../../../../styles/mixin";
+@import "../../../../../styles/flex";
+@import "../../../../../styles/thisStyle";
+@import "../../../../../styles/base";
+@import '../../../../../styles/common';
+
+
+.bangding{
+    background:#fff;
+    overflow-y: auto;
+    height:100%;
+    &-section{
+        &-router{
+            padding:15px;
+            display: block;
+            overflow: hidden;
+            border-bottom: 1px solid #aaa;
+            position: relative;
+            &-one{
+                float:left;
+                position: absolute;
+                top:50%;
+                @include translate(0,-50%);
+            }
+            &-two{
+                float:right;
+                max-width: 130px;
+                margin-right:25px;
+                a{
+                    display: block;
+                    height:100%;
+                    width:100%;
+                }
+                &-img1{
+                    display: block;
+                    max-width:100%;
+                }
+                &-img2{
+                    display: block;
+                    max-width:50px;
+                    max-height:50px;
+                    @include radius(25px);
+                }
+            }
+            &-three{
+                
+                float:right;
+                position: absolute;
+                top:50%;
+                right:15px;
+                @include translate(0,-50%);
+                span{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &-create{
+        margin:50px 18px;
+        height:45px;
+        line-height: 45px;
+        color:#009241;
+        text-align: center;
+        border:1px solid #009241;
+        @include radius(4px);
+    }
+
+}
+
+.hui{
+    color:#ababab;
+    border-color: #ababab;
+}
+.lv{
+    color:#009241;
+    border-color: #009241;
+}
+
+.showIm{
+    display: block!important;
+}
+
+.hideIm{
+    display: none!important;
+}

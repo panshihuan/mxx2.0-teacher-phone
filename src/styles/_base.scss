@@ -1,0 +1,123 @@
+
+
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul,figure{
+    margin:0;
+    padding:0
+}
+
+*{
+    box-sizing: border-box;
+}
+
+aside,
+figure,
+main{
+    display: block;
+}
+
+html{
+    font-size: 6.25%;
+}
+
+html,
+body{
+    -webkit-overflow-scrolling:touch;
+    overflow-x:hidden;
+    height:100%;
+}
+
+body{
+    font: $fontSize02 'Microsoft YaHei', "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: $fontColor01;
+    -webkit-text-size-adjust: none;
+    max-width:770px;
+    margin:0 auto;
+}
+
+#app{
+    height:100%;
+}
+
+#app>div{
+    height:100%;
+}
+
+a,
+label,
+input,
+button{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color:transparent;
+    //-webkit-appearance:none;
+}
+
+input,input:focus,input:active{user-select: text;}
+
+button{
+    border:none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+a:focus, a:hover,a:visited,a:active,a:link{
+    text-decoration:none;
+    color: inherit;
+}
+
+p,
+article{
+    word-break: break-all;
+}
+
+ul,
+ol{
+    list-style: none;
+}
+
+fieldset{
+    border: none;
+}
+
+input:focus,
+button:focus{
+    outline: none;
+}
+
+mark{
+    background: none;
+    color: inherit;
+}
+
+input{
+    border-color:#bbb;
+    outline: none;
+    padding-left:15px;
+    padding-right:15px;
+    @include radius(4px);
+    // -webkit-appearance: none;
+}
+
+
+body>.ng-scope{
+    height:100%;
+    overflow-x:hidden; 
+    overflow-y:auto; 
+}
+
+
+input[type=checkbox]{
+    border-color: #ccc;
+}
+
+textarea{
+    padding:7px 15px;
+    @include radius(4px);
+}
+
+input textarea{
+    border:1px solid #888!important;
+}
