@@ -107,7 +107,7 @@ export default class Login extends React.Component {
                                     <img src={this.state.school.headImgLocal} />
                                 </div>
 
-                                <div style={{textAlign:'center',marginTop:'6px'}} class="login-title-span">
+                                <div style={{textAlign:'center',marginTop:'6px'}} className="login-title-span">
                                     <span>{this.state.school.schoolName}</span>
                                 </div>
                              
@@ -134,15 +134,16 @@ export default class Login extends React.Component {
                                         <span className="icon-yangzhengma04"></span>
                                         <input style={{width:'60%'}} ref="code" type="text" placeholder="验证码" />
                                     </label>
-                                    <label onClick={this.codeClick} className="login-code-btn">
+                                    <label onClick={()=>this.codeClick()} className="login-code-btn">
                                         <img src={'data:image/jpg;base64,'+this.state.getCode} alt="" />
                                     </label>
+                                    <div className="floatMyCode" onClick={()=>this.codeClick()}></div>
                                 </div>
                                 <p className={error}>
                                     {this.state.errorInfo}
                                 </p>
 
-                                <div onClick={e=>this.onSubmit(event,1)} className="login-submit">
+                                <div className="floatMyCode" onClick={e=>this.onSubmit(event,1)} className="login-submit">
                                     <span>登 录</span>
                                 </div>
 
@@ -151,7 +152,7 @@ export default class Login extends React.Component {
                                         <a href="http://www.maixuexi.cn/register.html?userType=2">快速注册</a>
                                     </p>
                                     <p>
-                                        <a href="http://www.maixuexi.cn/forget.html?uerType=1" target="_blank">
+                                        <a href="http://www.maixuexi.cn/forget.html?uerType=2" target="_blank">
                                             找回密码
                                         </a>
                                     </p>
@@ -167,7 +168,7 @@ export default class Login extends React.Component {
 
                             <div className="login-fourP">
                                 <div className="login-fourP-logo">
-                                    <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf305ea0876e9955e&redirect_uri=http%3A%2F%2Fmaixuexi.cn%2Fphone%2F&response_type=code&scope=snsapi_base&state=WeChatLogin&component_appid=wxadd06c23643a76c8#wechat_redirect" className="icon-comments"></a>
+                                    <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf305ea0876e9955e&redirect_uri=http%3A%2F%2Fmaixuexi.cn%2Fparent%2F&response_type=code&scope=snsapi_base&state=WeChatLogin&component_appid=wxadd06c23643a76c8#wechat_redirect" className="icon-comments"></a>
                                 </div>
                                 <div className="login-fourP-span">
                                     微信登录
@@ -231,7 +232,7 @@ export default class Login extends React.Component {
                                 <a className="a_log" href="http://www.maixuexi.cn/teacher" id="teacher-login" target="_blank">教师登录</a>
                                 <a className="a_log" href="http://www.maixuexi.cn/student" target="_blank">学生登录</a>
                             </div>
-                            <a href="#" className="close click_tracking" data-label="Close header menu" tabindex="1"></a>
+                            <a href="#" className="close click_tracking" data-label="Close header menu" tabIndex="1"></a>
                         </div>
                     </header>
                     <div className="me_content">
@@ -247,7 +248,7 @@ export default class Login extends React.Component {
                                     </p>
                                     <p>
                                         <input ref="code2" className="inp_yzm" type="text" id="captcha" placeholder="验证码" />
-                                        <img onClick={this.codeClick} src={'data:image/jpg;base64,'+this.state.getCode} className="inp_code" id="code" />
+                                        <img onClick={e=>this.codeClick(event)} src={'data:image/jpg;base64,'+this.state.getCode} className="inp_code" id="code" />
                                     </p>
                                     <p className="errorInfo"></p>
                                     <p onClick={e=>this.onSubmit(event,2)} className="me_p"><a className="login_btn" >登&nbsp;&nbsp;&nbsp;录</a></p>
@@ -292,7 +293,8 @@ export default class Login extends React.Component {
     }
 
     // 获取验证码
-    codeClick(e){
+    codeClick(){
+        console.log(123333)
         fetch('http://115.29.177.200:8080/image/code')
         .then(function(response) {
             return response.json();
@@ -457,7 +459,8 @@ export default class Login extends React.Component {
                         localStorage.setItem('tokens2', res.data.token);
                         
                         this.context.router.push(`/home/${jsons.sid}`)
-                    }).then(function(){
+                        
+                    }.bind(this)).then(function(){
                         
                     }.bind(this))
                 }

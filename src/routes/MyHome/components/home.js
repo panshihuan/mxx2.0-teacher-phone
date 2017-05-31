@@ -6,6 +6,10 @@ import p120 from '../assets/p120.png'
 
 export default class Home extends React.Component {
     constructor(props) {
+        if (localStorage.getItem('relo2')=='true') {
+            localStorage.setItem('relo2','false');
+            location.reload();
+        }
         super(props);
         this.state={
             parentInfo:{}
@@ -13,10 +17,7 @@ export default class Home extends React.Component {
     }
 
     componentWillMount(){
-        if (localStorage.getItem('relo2')=='true') {
-            localStorage.setItem('relo2','false');
-            location.reload();
-        }
+        
     }
 
     componentDidMount(){

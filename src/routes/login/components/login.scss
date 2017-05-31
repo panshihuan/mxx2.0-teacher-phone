@@ -463,3 +463,10 @@
 .showLo{
     @extend %flexbox;
 }
+
+.floatMyCode{
+    position: absolute;
+    right: 10px;
+    width: 100px;
+    height: 45px;
+}
